@@ -19,6 +19,7 @@
   	<spring-framework.version>4.3.10.RELEASE</spring-framework.version>
   	<servlet.version>3.1.0</servlet.version>
   	<thymeleaf.version>3.0.7.RELEASE</thymeleaf.version>
+  	<hibernate-validator.version>6.0.1.Final</hibernate-validator.version>
   
   	
   </properties>
@@ -65,7 +66,7 @@
   		<groupId>javax.servlet</groupId>
   		<artifactId>javax.servlet-api</artifactId>
   		<version>${servlet.version}</version>
-  		<scope>provided</scope>
+  		<scope>provided</scope> <!-- TomCat provide -->
   	</dependency>
   	
   	<!-- Thymeleaf -->
@@ -80,6 +81,13 @@
     		<artifactId>thymeleaf-spring4</artifactId>
     		<version>${thymeleaf.version}</version>
 	</dependency>
-  	
+	 
+	<!-- Bean Validator / Hibernate Validator -->
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-validator</artifactId>
+  		<version>${hibernate-validator.version}</version>
+  		<scope>compile</scope>
+  	</dependency>
   </dependencies>
 </project>
