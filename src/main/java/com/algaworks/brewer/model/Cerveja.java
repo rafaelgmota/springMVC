@@ -7,8 +7,10 @@ public class Cerveja {
 
 	@NotBlank
 	private String sku;
+	
 	@NotBlank
 	private String nome;
+	
 	@NotBlank
 	@Size(min=3, max=50)
 	private String descricao; //Obrigatoria e tamanho máximo < 50 characs
