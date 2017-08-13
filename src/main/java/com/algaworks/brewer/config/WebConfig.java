@@ -1,3 +1,4 @@
+
 package com.algaworks.brewer.config;
 
 import org.springframework.beans.BeansException;
