@@ -15,7 +15,7 @@ import com.algaworks.brewer.model.Cerveja;
 public class CervejasController {
 	
 	@RequestMapping("/cervejas/novo")
-	public String novo() {
+	public String novo(Cerveja cerveja) { //Spring adiciona como atributro automat		
 		return "cerveja/CadastroCerveja";
 	}
 	
@@ -23,9 +23,7 @@ public class CervejasController {
 	public String cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
 		
 		if(result.hasErrors()) {
-			model.addAttribute("mensagem", "Erro no formulário"); //Só funciona com forward
-			System.out.println(">>> tem erro!");
-			return "cerveja/CadastroCerveja"; //Forward
+			return novo(cerveja); //Spring adiciona cerveja como atributo
 		}
 		
 		//Salvar no banco de dados ...
