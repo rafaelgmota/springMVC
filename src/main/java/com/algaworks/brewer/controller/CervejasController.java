@@ -34,12 +34,4 @@ public class CervejasController {
 		attributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso"); //Atributos para redirect, cria uma seção temporaria
 		return "redirect:/cervejas/novo"; //Redirect
 	}
-	
-	/*
-	 * Request para nova URL para testes!
-	 * */
-	@RequestMapping("/cervejas/cadastro")
-	public String cadastro() {
-		return "cerveja/cadastro-produto"; 
-	}
 }
