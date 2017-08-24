@@ -43,6 +43,7 @@
 					<textarea id="descricao" rows="3" class="form-control"></textarea>
 				</div>
 
+<<<<<<< HEAD
 				<div class="row">
 					<div class="col-sm-3  form_group">
 						<label for="estilo">Estilo</label> <select id="estilo"
@@ -110,4 +111,21 @@
 		</div>
 	</section>
 </body>
+=======
+	<form method="POST">
+		<span th:text="${mensagem}"></span>
+		<br>
+		
+		<label for="sku">SKU</label>
+		<input type="text" id="sku" name="sku">
+		<label for="nome">Nome</label>
+		<input type="text" id="nome" name="nome">
+		<label for="descricao">Descricao</label>
+		<input type="text" id="descricao" name="descrição">
+		
+		<br>
+		
+		<input type="submit" name="Salvar">		
+	</form>
+>>>>>>> 2c7ad92ed70762dea3b317b89cdb9accc9f9e5bb
 </html>
