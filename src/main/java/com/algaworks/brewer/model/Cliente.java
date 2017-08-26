@@ -19,7 +19,6 @@ public class Cliente {
 	@NotBlank(message = "Logradouro é obrigatório")
 	private String logradouro;
 	
-	@NotBlank(message = "Numero é obrigatório")
 	private int numero;
 	
 	private String complemento;
