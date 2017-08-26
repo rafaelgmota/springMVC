@@ -14,7 +14,7 @@ import com.algaworks.brewer.model.Cidade;
 @Controller
 public class CidadesController {
 	
-	@RequestMapping("/cidades/novo")
+	@RequestMapping("/cidades/nova")
 	public String novo(Cidade cidade) { //Spring adiciona como atributro automat		
 		return "cidade/CadastroCidade";
 	}
@@ -29,6 +29,6 @@ public class CidadesController {
 		//Salvar no banco de dados ...
 		
 		attributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso"); //Atributos para redirect, cria uma seção temporaria
-		return "redirect:/cidades/novo"; //Redirect
+		return "redirect:/cidades/nova"; //Redirect
 	}
 }
