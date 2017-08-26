@@ -8,7 +8,7 @@ public class Cliente {
 	private String nome;
 	
 	@NotBlank(message = "CPF/CNPJ é obrigatório")
-	private String cpfCnpj;
+	private String cpfCnpj; //Isso será realmente uma string?
 	
 	@NotBlank(message = "Telefone é obrigatório")
 	private String telefone;
@@ -24,7 +24,7 @@ public class Cliente {
 	private String complemento;
 	
 	@NotBlank(message = "CEP é obrigatório")
-	private String cep;	
+	private String cep;	//Isso será realmente uma string?
 	
 	public String getNome() {
 		return nome;
