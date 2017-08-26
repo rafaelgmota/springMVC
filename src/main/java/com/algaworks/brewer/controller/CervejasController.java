@@ -28,9 +28,6 @@ public class CervejasController {
 		
 		//Salvar no banco de dados ...
 		
-		System.out.println(">>> cadastrar!");
-		System.out.println(">>> sku:"+cerveja.getSku());
-		System.out.println(">>> nome:"+cerveja.getNome());
 		attributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso"); //Atributos para redirect, cria uma seção temporaria
 		return "redirect:/cervejas/novo"; //Redirect
 	}
