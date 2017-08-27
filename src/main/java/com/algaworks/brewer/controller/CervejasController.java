@@ -13,9 +13,11 @@ import com.algaworks.brewer.model.Cerveja;
 
 @Controller
 public class CervejasController {
+
 	
 	@RequestMapping("/cervejas/novo")
 	public String novo(Cerveja cerveja) { //Spring adiciona como atributro automat		
+		
 		return "cerveja/CadastroCerveja";
 	}
 	

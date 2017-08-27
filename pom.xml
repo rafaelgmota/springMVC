@@ -14,13 +14,30 @@
   	
   	<failOnMissingWebXml>false</failOnMissingWebXml>
   	
+  	<!-- Java -->
   	<java.version>1.8</java.version>
-  	<maven-compiler-pluging.version>3.2</maven-compiler-pluging.version>  	
+  	
+  	<!-- Maven -->
+  	<maven-compiler-pluging.version>3.2</maven-compiler-pluging.version>
+  	
+  	<!-- Spring -->  	
   	<spring-framework.version>4.3.10.RELEASE</spring-framework.version>
+  	
+  	<!-- Servlet API -->
   	<servlet.version>3.1.0</servlet.version>
+  	
+  	<!-- Thymeleaf -->
   	<thymeleaf.version>3.0.7.RELEASE</thymeleaf.version>
+  	
+  	<!-- Bean validator / Hibernator Validator -->
   	<hibernate-validator.version>6.0.1.Final</hibernate-validator.version>
+  	
+  	<!-- Thymeleaf - Layout Dialect -->
   	<thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+  	
+  	<!-- Logging -->
+  	<log4j.version>2.6</log4j.version>
+  	<jcl-over-slf4j.version>1.7.21</jcl-over-slf4j.version>
   
   	
   </properties>
@@ -55,6 +72,12 @@
   	<!-- Spring MVC -->
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-webmvc</artifactId>
+  		<exclusions>
+  			<exclusion>
+  				<groupId>commons-logging</groupId>
+  				<artifactId>commons-logging</artifactId>
+  			</exclusion>
+  		</exclusions>
   	</dependency>
   	
   	<dependency>
@@ -97,6 +120,28 @@
   		<artifactId>thymeleaf-layout-dialect</artifactId>
   		<version>${thymeleaf-layout-dialect.version}</version>
   	</dependency>
+  	
+  	<!-- Logging -->
+  	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-slf4j-impl</artifactId>
+		<version>${log4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-api</artifactId>
+		<version>${log4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-core</artifactId>
+		<version>${log4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>jcl-over-slf4j</artifactId>
+		<version>${jcl-over-slf4j.version}</version>
+	</dependency>
   	
   </dependencies>
 </project>
