@@ -34,7 +34,7 @@ public class Cerveja {
 	
 	private BigDecimal valor;
 	
-	@Column(name = "teor_alcoolico")
+	@Column(name = "teor_alcoolico") //Só para setar o nome sem camel case
 	private BigDecimal teorAlcoolico;
 	
 	private BigDecimal comissao;
