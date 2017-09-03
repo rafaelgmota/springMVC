@@ -50,7 +50,7 @@
 						<div class="bw-field-action">
 							<select id="estilo" class="form-control">
 							<option value="">Selecione o estilo</option>
-							<option value="1">Pale Lager</option>
+							<option th:each="estilo : ${estilos}" th:value="${estilo.codigo}" th:text="${estilo.nome}"/>
 						</select>
 						
 						<div class="bw-field-action-icon"> 
@@ -67,7 +67,7 @@
 						<label for="sabor">sabor</label> 
 						<select id="sabor" class="form-control">
 							<option value="">Selecione o sabor</option>
-							<option value="1">Adocicada</option>
+							<option th:each="sabor : ${sabores}" th:value="${sabor}" th:text="${sabor.descricao}"/>
 						</select>
 					</div>
 
@@ -83,12 +83,12 @@
 						<!-- lg = largo, sm = small. Isso faz com que quebre vá para outra linha-->
 						<label for="origem ">Origem</label>
 						<div>
-							<div class="radio radio-inline">
-								<input type="radio" name="origem"> <label>Nacional</label>
-							</div>
-							<div class="radio radio-inline">
-								<input type="radio" name="origem"> <label>Internacional</label>
-							</div>
+							<th:block th:each="origem : ${origens}">
+								<div class="radio radio-inline">
+									<input th:id="|id_${origem}|" type="radio" th:value="${origem}" name="origem">
+									<label th:for="|id_${origem}|" th:text="${origem.descricao}">Nacional</label> <!-- for: click on text ant select item -->
+								</div>
+							</th:block> 
 						</div>
 					</div>
 				</div>
