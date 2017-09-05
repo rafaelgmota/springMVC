@@ -34,7 +34,7 @@ public class CervejasController {
 	}
 	
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
-	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
+	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {	
 		
 		if(result.hasErrors()) {
 			return novo(cerveja); //Spring adiciona cerveja como atributo
@@ -43,6 +43,8 @@ public class CervejasController {
 		//Salvar no banco de dados ...
 		
 		attributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso"); //Atributos para redirect, cria uma seção temporaria
+		
+
 		return new ModelAndView("redirect:/cervejas/novo"); //Redirect
 	}
 }
