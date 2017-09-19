@@ -16,12 +16,16 @@ import com.algaworks.brewer.model.Origem;
 import com.algaworks.brewer.model.Sabor;
 import com.algaworks.brewer.repository.Cervejas;
 import com.algaworks.brewer.repository.Estilos;
+import com.algaworks.brewer.service.CadastroCervejaService;
 
 @Controller
 public class CervejasController {
 	
 	@Autowired 
 	private Estilos estilos;
+	
+	@Autowired
+	private CadastroCervejaService cadastroCervejaService;
 	
 	@RequestMapping("/cervejas/novo")
 	public ModelAndView novo(Cerveja cerveja) { //Spring adiciona como atributro automat		
@@ -39,12 +43,9 @@ public class CervejasController {
 		if(result.hasErrors()) {
 			return novo(cerveja); //Spring adiciona cerveja como atributo
 		}
-		
-		//Salvar no banco de dados ...
-		
+		 	
+		cadastroCervejaService.salvar(cerveja);
 		attributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso"); //Atributos para redirect, cria uma seção temporaria
-		
-
 		return new ModelAndView("redirect:/cervejas/novo"); //Redirect
 	}
 }
