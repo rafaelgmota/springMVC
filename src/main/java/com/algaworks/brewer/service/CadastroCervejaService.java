@@ -13,7 +13,7 @@ public class CadastroCervejaService {
 	@Autowired 
 	private Cervejas cervejas;
 	
-	@Transactional
+	@Transactional //At JPA config the default transaction was disabled, so is necessary to tell where the transaction need to be enabled
 	public void salvar(Cerveja cerveja)
 	{
 		cervejas.save(cerveja);
