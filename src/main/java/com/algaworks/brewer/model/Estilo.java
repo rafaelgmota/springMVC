@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -26,6 +27,7 @@ public class Estilo implements Serializable{
 	private List<Cerveja> cervejas;
 	
 	@NotBlank(message = "Nome é obrigatório")
+	@Size(min=1, max=10, message="O nome deve ter entre 1 e 10 caracteres")
 	private String nome;
 	
 
