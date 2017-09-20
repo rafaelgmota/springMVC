@@ -12,7 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.algaworks.brewer.validation.SKU;
@@ -35,22 +39,35 @@ public class Cerveja {
 	@Size(min=1, max=50, message = "A descrição deve ter tamanho entre 3 e 50 e é obrigatória")
 	private String descricao; //Obrigatoria e tamanho máximo < 50 characs
 	
+	@NotNull(message="O valor é obrigatório")
+	@DecimalMin(value="0.50", message="O valor mínimo da cerveja é: R$ 0,50")
+	@DecimalMax(value="1000.0", message="O valor máximo da cerveja é: R$ 1000")
 	private BigDecimal valor;
 	
+	@NotNull(message="O teor alcoolico é obrigatório")
+	@DecimalMin(value="0.00", message="O teor alcoolico mínimo é 0.00%")
+	@DecimalMax(value="100.0", message="O teor alcoolico máximo é 100.00%")
 	@Column(name = "teor_alcoolico") //Só para setar o nome sem camel case
 	private BigDecimal teorAlcoolico;
 	
+	@NotNull(message="A comissão é obrigatória")
+	@DecimalMax(value = "100.00", message="A comissão máxima é de 100%")	
+	@DecimalMin(value = "2.0", message="A comissão mínima é de 2%")
 	private BigDecimal comissao;
 	
+	@Max(value=9999, message="A quantidade em estoque máximo é 9999")
 	@Column(name = "quantidade_estoque")
 	private Integer quantidadeEstoque;
 	
+	@NotNull(message="A origem é obrigatória")
 	@Enumerated(EnumType.STRING)
 	private Origem origem;
 	
+	@NotNull(message="O sabor é obrigatório")
 	@Enumerated(EnumType.STRING)
 	private Sabor sabor;
 	
+	@NotNull(message="O estilo é obrigatório")
 	@ManyToOne
 	@JoinColumn(name = "codigo_estilo")
 	private Estilo estilo;
