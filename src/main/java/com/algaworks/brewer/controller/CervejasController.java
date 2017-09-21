@@ -28,6 +28,7 @@ public class CervejasController {
 	private CadastroCervejaService cadastroCervejaService;
 	
 	@RequestMapping("/cervejas/novo")
+	//Return ModelAndView to pass data to View, also return the desired view
 	public ModelAndView novo(Cerveja cerveja) { //Spring adiciona como atributro automat		
 		ModelAndView mv = new ModelAndView("cerveja/CadastroCerveja");
 		mv.addObject("sabores", Sabor.values());
