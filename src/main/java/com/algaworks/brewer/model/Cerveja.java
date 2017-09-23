@@ -75,6 +75,7 @@ public class Cerveja {
 	@JoinColumn(name = "codigo_estilo")
 	private Estilo estilo;
 	
+	//JPA Callbacks
 	@PrePersist @PreUpdate //Will be executed before persist and update
 	private void prePersistUpdate() {
 		sku = sku.toUpperCase();
