@@ -52,7 +52,7 @@ public class EstilosController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE})
-	//RequestBody and ResponsyBody because the data need to ne converted from JSON
+	//RequestBody and ResponsyBody because the data need to ne converted from JSON and it will be trated at javascript
 	public @ResponseBody ResponseEntity<?> salvar(@RequestBody @Valid Estilo estilo, BindingResult result) {
 		
 		if(result.hasErrors()) {
